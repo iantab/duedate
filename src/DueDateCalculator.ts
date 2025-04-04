@@ -53,18 +53,18 @@ export default class DueDateCalculator {
      * @returns The next working day.
      */
     private static getNextWorkingDay(date: Date): Date {
-        const nextDay: Date = new Date(date);
-        nextDay.setDate(nextDay.getDate() + 1);
-        const day: number = nextDay.getDay();
+        const nextWorkingDay: Date = new Date(date);
+        nextWorkingDay.setDate(nextWorkingDay.getDate() + 1);
+        const day: number = nextWorkingDay.getDay();
 
         if (day === 6) {
             // If Saturday, skip to Monday
-            nextDay.setDate(nextDay.getDate() + 2);
+            nextWorkingDay.setDate(nextWorkingDay.getDate() + 2);
         } else if (day === 0) {
             // If Sunday, skip to Monday
-            nextDay.setDate(nextDay.getDate() + 1);
+            nextWorkingDay.setDate(nextWorkingDay.getDate() + 1);
         }
 
-        return nextDay;
+        return nextWorkingDay;
     }
 }
