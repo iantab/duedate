@@ -15,21 +15,21 @@ export default class DueDateCalculator {
         }
 
         let remainingHours: number = turnaroundTime;
-        let currentDate: Date = new Date(submitDate);
+        let dueDate: Date = new Date(submitDate);
 
         while (remainingHours > 0) {
-            const hoursLeftInDay: number = this.WORKING_HOURS_END - currentDate.getHours();
+            const hoursLeftInDay: number = this.WORKING_HOURS_END - dueDate.getHours();
             if (remainingHours <= hoursLeftInDay) {
-                currentDate.setHours(currentDate.getHours() + remainingHours);
+                dueDate.setHours(dueDate.getHours() + remainingHours);
                 remainingHours = 0;
             } else {
                 remainingHours -= hoursLeftInDay;
-                currentDate = this.getNextWorkingDay(currentDate);
-                currentDate.setHours(this.WORKING_HOURS_START);
+                dueDate = this.getNextWorkingDay(dueDate);
+                dueDate.setHours(this.WORKING_HOURS_START);
             }
         }
 
-        return currentDate;
+        return dueDate;
     }
 
     /**
