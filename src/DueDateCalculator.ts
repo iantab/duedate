@@ -18,7 +18,7 @@ export default class DueDateCalculator {
         let currentDate: Date = new Date(submitDate);
 
         while (remainingHours > 0) {
-            const hoursLeftInDay = this.WORKING_HOURS_END - currentDate.getHours();
+            const hoursLeftInDay: number = this.WORKING_HOURS_END - currentDate.getHours();
             if (remainingHours <= hoursLeftInDay) {
                 currentDate.setHours(currentDate.getHours() + remainingHours);
                 remainingHours = 0;
