@@ -1,7 +1,7 @@
 export default class DueDateCalculator {
 
-    private static readonly WORKING_HOURS_START = 9; // 9 AM
-    private static readonly WORKING_HOURS_END = 17; // 5 PM
+    private static readonly WORKING_HOURS_START: number = 9; // 9 AM
+    private static readonly WORKING_HOURS_END: number = 17; // 5 PM
 
     /**
      * Calculates the due date based on the submit date and turnaround time.
