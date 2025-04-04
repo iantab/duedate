@@ -48,7 +48,7 @@ export default class DueDateCalculator {
     }
 
     /**
-     * Gets the next working day starting at 9AM.
+     * Gets the next working day.
      * @param date The date to check.
      * @returns The next working day.
      */
